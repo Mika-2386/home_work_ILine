@@ -1,0 +1,2 @@
+insert into ssd (id, post, salary)
+values (	9999457	,			 'Старший разработчик '	,	60000	)
