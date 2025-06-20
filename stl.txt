@@ -1,0 +1,2 @@
+insert into stl (id, post, salary)
+values (	7654376	,			 'Руководитель группы '	,	75000	)
