@@ -1,0 +1,76 @@
+create table ceo (
+id integer primary key,
+id_sceo integer not null,
+patronymic VARCHAR(30) NOT NULL,
+name VARCHAR(30) NOT NULL,
+surname VARCHAR(30) NOT NULL,
+foreign key (id_sceo) references sceo (id)
+);
+create table m (
+id integer primary key,
+id_sm integer not null,
+id_ceo integer not null,
+patronymic VARCHAR(30) NOT NULL,
+name VARCHAR(30) NOT NULL,
+surname VARCHAR(30) NOT NULL,
+foreign key (id_ceo) references ceo (id),
+foreign key (id_sm) references sm (id)
+);
+create table tl (
+id integer primary key,
+id_stl integer not null,
+id_m integer not null,
+patronymic VARCHAR(30) NOT NULL,
+name VARCHAR(30) NOT NULL,
+surname VARCHAR(30) NOT NULL,
+foreign key (id_m) references m (id),
+foreign key (id_stl) references stl (id)
+);
+create table sd (
+id integer primary key,
+id_ssd integer not null,
+id_tl integer not null,
+patronymic VARCHAR(30) NOT NULL,
+name VARCHAR(30) NOT NULL,
+surname VARCHAR(30) NOT NULL,
+foreign key (id_tl) references tl (id),
+foreign key (id_ssd) references ssd (id)
+);
+create table d (
+id integer primary key,
+id_s_d integer not null,
+id_sd integer not null,
+patronymic VARCHAR(30) NOT NULL,
+name VARCHAR(30) NOT NULL,
+surname VARCHAR(30) NOT NULL,
+foreign key (id_sd) references sd (id),
+foreign key (id_s_d) references s_d (id)
+)
+
+/*
+CREATE table sceo (
+id integer primary key,
+post VARCHAR(50) NOT NULL,
+salary integer not null
+);
+CREATE table sm (
+id integer primary key,
+post VARCHAR(50) NOT NULL,
+salary integer not null
+);
+CREATE table stl (
+id integer primary key,
+post VARCHAR(50) NOT NULL,
+salary integer not null
+);
+CREATE table ssd (
+id integer primary key,
+post VARCHAR(50) NOT NULL,
+salary integer not null
+);
+CREATE table s_d (
+id integer primary key,
+post VARCHAR(50) NOT NULL,
+salary integer not null
+)
+*/
