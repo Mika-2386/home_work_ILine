@@ -1,0 +1,5 @@
+insert into ceo (id, id_sceo, name, surname, patronymic)
+values (1, 5811123, 'Квашкин', 'Сергей', 'Владимирович')
+
+
+
